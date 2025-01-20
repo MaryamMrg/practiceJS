@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    margin-left: 50px;
+}
+body{
+    background-color: beige;
+    
+}
+#changeTextButton{
+width: 70px;
+display: flex;
+justify-content: center;
+align-items: center;
+}

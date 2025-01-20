@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript DOM Challenges</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<!-- Challenge 1: -->
+<p id="myParagraph">This is the original text.</p>
+<button id="changeTextButton">Change Text</button>
+<script>document.getElementById("changeTextButton").addEventListener("click", () => {
+    document.getElementById("myParagraph").textContent = "hi there!";
+  });
+  </script>
+
+
+<!-- Challenge 2: -->
+<ul id="myList">
+    <li>mostang</li>
+    <li>copra</li>
+  </ul>
+  <button id="addListItem">Add Item</button>
+<script>document.getElementById("addListItem").addEventListener("click", () => {
+    const newItem = document.createElement("li");
+    newItem.textContent = "New Item";
+    document.getElementById("myList").appendChild(newItem);
+  });
+  </script>  
+
+
+<!-- Challenge 3:  -->
+<button id="styleButton">Change Styles</button>
+<script>document.getElementById("styleButton").addEventListener("click", () => {
+    const button = document.getElementById("styleButton");
+    button.style.backgroundColor = "blue";
+    button.style.color = "white";
+  });
+  </script>
+
+<!-- Challenge 4:  -->
+<button class="alertButton">hi</button>
+<button class="alertButton">whats'UP</button>
+<script>document.querySelectorAll(".alertButton").forEach(button => {
+    button.addEventListener("click", () => {
+      alert(button.textContent);
+    });
+  });
+  </script>
+
+<!-- Challenge 5:  -->
+<form id="form">
+    <input type="text" id="inputField" required placeholder="Enter text">
+    <button type="submit">Submit</button>
+    <p id="error" style="color: red; display: none;">Field is required!</p>
+</form>
+<script>document.getElementById("myForm").addEventListener("submit", (event) => {
+    const input = document.getElementById("myInput").value.trim();
+    const errorMessage = document.getElementById("errorMessage");
+  
+    if (!input) {
+      event.preventDefault();
+      errorMessage.textContent = "This field cannot be empty!";
+    } else {
+      errorMessage.textContent = "";
+    }
+  });
+  </script>
+
