@@ -31,6 +31,7 @@
 
 
 <!-- Challenge 3:  -->
+ <div id="B">
 <button id="styleButton">Change Styles</button>
 <script>document.getElementById("styleButton").addEventListener("click", () => {
     const button = document.getElementById("styleButton");
@@ -41,7 +42,7 @@
 
 <!-- Challenge 4:  -->
 <button class="alertButton">hi</button>
-<button class="alertButton">whats'UP</button>
+<button class="alertButton">whats'UP</button></div>
 <script>document.querySelectorAll(".alertButton").forEach(button => {
     button.addEventListener("click", () => {
       alert(button.textContent);
@@ -67,4 +68,59 @@
     }
   });
   </script>
+  <!-- challenge 6:-->
+<button id="toggleButton">Toggle Visibility</button>
+<div id="toggleDiv">hide me</div>
+<script>document.getElementById("toggleButton").addEventListener("click", () => {
+    const div = document.getElementById("toggleDiv");
+    div.style.display = div.style.display === "none" ? "block" : "none";
+  });
+  </script>
+<!-- challenge 7-->
+<span id="time">The current time is</span>
+<span id="currentTime"></span>
+  
+<script>setInterval(() => {
+  const now = new Date();
+  document.getElementById("currentTime").textContent = now.toLocaleString();
+}, 1000);
+</script>
+<!-- challenge 8-->
+<div id="removableDiv">remove me</div>
+<button id="removeButton">Remove </button>
 
+<script>document.getElementById("removeButton").addEventListener("click", () => {
+  const div = document.getElementById("removableDiv");
+  if (div) div.remove();
+});
+</script>
+<!-- challenge 9-->
+<!-- challenge 10-->
+<button id="counterButton">Click Me</button>
+<p>Count: <span id="clickCount">0</span></p>
+<script>let count = 0;
+  document.getElementById("counterButton").addEventListener("click", () => {
+    count++;
+    document.getElementById("clickCount").textContent = count;
+  });
+  </script>
+  <!-- challenge 11-->
+  <div id="hoverDiv">Hover over me!</div>
+<script>const div = document.getElementById('hoverDiv');
+  div.addEventListener('mouseenter', () => div.classList.add('hovered'));
+  div.addEventListener('mouseleave', () => div.classList.remove('hovered'));
+  </script>
+  <!-- challenge 12-->
+  <select id="dropdownMenu"></select>
+<script>const options = ['Option 1', 'Option 2', 'Option 3'];
+  const dropdown = document.getElementById('dropdownMenu');
+  
+  options.forEach(option => {
+    const opt = document.createElement('option');
+    opt.value = option;
+    opt.textContent = option;
+    dropdown.appendChild(opt);
+  });
+  </script>
+  <!-- challenge 13-->
+   
